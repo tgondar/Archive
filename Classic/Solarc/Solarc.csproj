@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5339C3FC-916E-488A-94FD-F9DCD23D5D3A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Solarc</RootNamespace>
+    <AssemblyName>Solarc</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\DLLs\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\DLLs\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Configuration.ConfigurationBuilders.Base.3.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DataVisualization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization.Design">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AAttachment.asmx" />
+    <Content Include="AC.asmx" />
+    <Content Include="ACEmployer.asmx" />
+    <Content Include="ACreditor.asmx" />
+    <Content Include="ACSearch.asmx" />
+    <Content Include="ACSection.asmx" />
+    <Content Include="AExec.asmx" />
+    <Content Include="ARepresentative.asmx" />
+    <Content Include="conteudo.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Default2.aspx" />
+    <Content Include="Default3.aspx" />
+    <Content Include="HTMLPage.htm" />
+    <Content Include="images\actualDayPattern.png" />
+    <Content Include="images\BlackGeral1.png" />
+    <Content Include="images\event1.jpg" />
+    <Content Include="images\event2.jpg" />
+    <Content Include="images\event3.jpg" />
+    <Content Include="images\event4.jpg" />
+    <Content Include="images\event5.jpg" />
+    <Content Include="images\event6.jpg" />
+    <Content Include="images\icons\add.png" />
+    <Content Include="images\icons\alert.png" />
+    <Content Include="images\icons\cancel.png" />
+    <Content Include="images\icons\clock.png" />
+    <Content Include="images\icons\confirm.png" />
+    <Content Include="images\icons\doc.png" />
+    <Content Include="images\icons\doc_s.png" />
+    <Content Include="images\icons\excel.png" />
+    <Content Include="images\icons\excel_s.png" />
+    <Content Include="images\icons\noicon.png" />
+    <Content Include="images\icons\noicon_s.png" />
+    <Content Include="images\icons\pdf.png" />
+    <Content Include="images\icons\pdf_s.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\spacer.png" />
+    <Content Include="images\specpopupbg.png" />
+    <Content Include="images\tableColor1.png" />
+    <Content Include="images\tableColor3.png" />
+    <Content Include="images\webapp\backBlue.png" />
+    <Content Include="images\webapp\backGray.png" />
+    <Content Include="images\webapp\calendar_icon.jpg" />
+    <Content Include="images\webapp\icons\add.png" />
+    <Content Include="images\webapp\icons\checked.png" />
+    <Content Include="images\webapp\icons\database.png" />
+    <Content Include="images\webapp\icons\delete.png" />
+    <Content Include="images\webapp\icons\edit.png" />
+    <Content Include="images\webapp\icons\enviar.png" />
+    <Content Include="images\webapp\icons\filedelete.png" />
+    <Content Include="images\webapp\icons\lock.png" />
+    <Content Include="images\webapp\icons\new.png" />
+    <Content Include="images\webapp\icons\next.png" />
+    <Content Include="images\webapp\icons\prev.png" />
+    <Content Include="images\webapp\icons\save.png" />
+    <Content Include="images\webapp\icons\search.png" />
+    <Content Include="images\webapp\icons\unchecked.png" />
+    <Content Include="images\webapp\icons\unlock.png" />
+    <Content Include="images\webapp\loading.gif" />
+    <Content Include="images\webapp\refresh.png" />
+    <Content Include="images\webapp\solicitorslogo.jpg" />
+    <Content Include="images\webapp\tableColor2.png" />
+    <Content Include="images\webapp\titleBack.png" />
+    <Content Include="images\webapp\titleBackBlue.png" />
+    <Content Include="images\webapp\titleBackGray.png" />
+    <Content Include="images\webapp\_loading.gif" />
+    <Content Include="images\webapp\__loading.gif" />
+    <Content Include="images\website\app.png" />
+    <Content Include="images\website\back.gif" />
+    <Content Include="images\website\backTop.png" />
+    <Content Include="images\website\ist2.jpg" />
+    <Content Include="images\weekDaysBackground.jpg" />
+    <Content Include="includes\41-notepad\css\style.css" />
+    <Content Include="includes\41-notepad\index.html" />
+    <Content Include="includes\41-notepad\preview.png" />
+    <Content Include="includes\dmenu\dolphin.js" />
+    <Content Include="includes\dmenu\images\dolphin_bg-ON.gif" />
+    <Content Include="includes\dmenu\images\dolphin_bg-OVER.gif" />
+    <Content Include="includes\dmenu\images\dolphin_bg.gif" />
+    <Content Include="includes\dmenu\images\dolphin_left-ON.gif" />
+    <Content Include="includes\dmenu\images\dolphin_right-ON.gif" />
+    <Content Include="includes\dmenu\style.css" />
+    <Content Include="includes\java.js" />
+    <Content Include="includes\jquery-1.8.1.min.js" />
+    <Content Include="includes\jquery-ui-1.8.22.custom.css" />
+    <Content Include="includes\jquery-ui-1.8.22.custom.min.js" />
+    <Content Include="includes\jquery\jquery-1.3.2.js" />
+    <Content Include="includes\jquery\jquery-1.4.2.min.js" />
+    <Content Include="includes\jquery\menu.js" />
+    <Content Include="includes\mainAppBlack.css" />
+    <Content Include="includes\mainAppBlue.css" />
+    <Content Include="includes\mainAppGray.css" />
+    <Content Include="includes\mainWeb.css" />
+    <Content Include="includes\SpecialPopup1.0.js" />
+    <Content Include="includes\validation.js" />
+    <Content Include="Solarc.sln" />
+    <Content Include="sqldatabase.sql" />
+    <Content Include="test.htm" />
+    <Content Include="teste.htm" />
+    <Content Include="UpgradeLog.XML" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="webapp\Default.aspx" />
+    <Content Include="webapp\parameters\Info.xml" />
+    <Content Include="webapp\parameters\Messages.xml" />
+    <Content Include="webapp\parameters\Parameter.xml" />
+    <Content Include="webapp\password.aspx" />
+    <Content Include="webapp\secure\admin_Message.aspx" />
+    <Content Include="webapp\secure\admin_user.aspx" />
+    <Content Include="webapp\secure\calendarQuery.txt" />
+    <Content Include="webapp\secure\changepassword.aspx" />
+    <Content Include="webapp\secure\Default.aspx" />
+    <Content Include="webapp\secure\Default2.aspx" />
+    <Content Include="webapp\secure\Document.aspx" />
+    <Content Include="webapp\secure\mntCalendar.aspx" />
+    <Content Include="webapp\secure\mntCourt.aspx" />
+    <Content Include="webapp\secure\mntCreditor.aspx" />
+    <Content Include="webapp\secure\mntDelegate.aspx" />
+    <Content Include="webapp\secure\mntEntity.aspx" />
+    <Content Include="webapp\secure\mntExecuted.aspx" />
+    <Content Include="webapp\secure\mntPermission.aspx" />
+    <Content Include="webapp\secure\mntProcessDetail.aspx" />
+    <Content Include="webapp\secure\mntRepresentative.aspx" />
+    <Content Include="webapp\secure\mntSolicitor.aspx" />
+    <Content Include="webapp\secure\mntUserSettings.aspx" />
+    <Content Include="webapp\secure\NewProcess.aspx" />
+    <Content Include="webapp\secure\PermissionService.asmx" />
+    <Content Include="webapp\secure\process.aspx" />
+    <Content Include="webapp\secure\Process2.aspx" />
+    <Content Include="webapp\secure\processearch.aspx" />
+    <Content Include="webapp\secure\ProcessEPayment.aspx" />
+    <Content Include="webapp\secure\ProcessG.aspx" />
+    <Content Include="webapp\secure\ProcessGHistory.aspx" />
+    <Content Include="webapp\secure\ProcessGSearch.aspx" />
+    <Content Include="webapp\secure\Report.aspx" />
+    <Content Include="webapp\secure\Representative.aspx" />
+    <Content Include="webapp\secure\Schedule.aspx" />
+    <Content Include="webapp\secure\scripts\entity.htm" />
+    <Content Include="webapp\secure\scripts\entity.js" />
+    <Content Include="webapp\secure\services\CalendarService.svc" />
+    <Content Include="webapp\secure\services\CourtService.svc" />
+    <Content Include="webapp\secure\services\EntityService.svc" />
+    <Content Include="webapp\secure\services\ProcessEService.svc" />
+    <Content Include="webapp\secure\services\ProcessGService.svc" />
+    <Content Include="webapp\secure\services\UserService.svc" />
+    <Content Include="webapp\secure\WebUserControl.ascx" />
+    <Content Include="webapp\secure\wucAppKey.ascx" />
+    <Content Include="webapp\secure\wucGeneralInformation.ascx" />
+    <Content Include="webapp\secure\wucPEPayment.ascx" />
+    <Content Include="webapp\secure\wucProcessAlert.ascx" />
+    <Content Include="webapp\secure\wucProcessDetails.ascx" />
+    <Content Include="webapp\secure\wucProcessFiles.ascx" />
+    <Content Include="webapp\secure\wucRepresentativeInformation.ascx" />
+    <Content Include="webapp\secure\wucUserSettings.ascx" />
+    <Content Include="webapp\ZipService.asmx" />
+    <Content Include="_App_Offline.htm" />
+    <Content Include="_index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="conteudo.aspx.cs">
+      <DependentUpon>conteudo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="conteudo.aspx.designer.cs">
+      <DependentUpon>conteudo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default2.aspx.cs">
+      <DependentUpon>Default2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default2.aspx.designer.cs">
+      <DependentUpon>Default2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default3.aspx.cs">
+      <DependentUpon>Default3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default3.aspx.designer.cs">
+      <DependentUpon>Default3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="L2S\AppKey.cs" />
+    <Compile Include="L2S\BdDataClasses.designer.cs" />
+    <Compile Include="L2S\BdDataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="L2S\BLL\EntitiesBLL.cs" />
+    <Compile Include="L2S\BLL\LocalizationBLL.cs" />
+    <Compile Include="L2S\BLL\ProcessBLL.cs" />
+    <Compile Include="L2S\BLL\ProcessEmployerBLL.cs" />
+    <Compile Include="L2S\BLL\ProcessExecutedBLL.cs" />
+    <Compile Include="L2S\BLL\ProcessPaymentBLL.cs" />
+    <Compile Include="L2S\BLL\RepresentativeBLL.cs" />
+    <Compile Include="L2S\BLL\UserSettingBLL.cs" />
+    <Compile Include="L2S\BLL\VwProcessBLL.cs" />
+    <Compile Include="L2S\Court.cs" />
+    <Compile Include="L2S\Creditor.cs" />
+    <Compile Include="L2S\DAL\SolArc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SolArc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="L2S\DataBase.cs" />
+    <Compile Include="L2S\Delegate.cs" />
+    <Compile Include="L2S\Documents.cs" />
+    <Compile Include="L2S\Email.cs" />
+    <Compile Include="L2S\Executed.cs" />
+    <Compile Include="L2S\Parameter.cs" />
+    <Compile Include="L2S\Process.cs" />
+    <Compile Include="L2S\ProvisionRequest.cs" />
+    <Compile Include="L2S\ClassRepresentative.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="webapp\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\password.aspx.cs">
+      <DependentUpon>password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\password.aspx.designer.cs">
+      <DependentUpon>password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\admin_Message.aspx.cs">
+      <DependentUpon>admin_Message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\admin_Message.aspx.designer.cs">
+      <DependentUpon>admin_Message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\admin_user.aspx.cs">
+      <DependentUpon>admin_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\admin_user.aspx.designer.cs">
+      <DependentUpon>admin_user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\changepassword.aspx.cs">
+      <DependentUpon>changepassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\changepassword.aspx.designer.cs">
+      <DependentUpon>changepassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\Default2.aspx.cs">
+      <DependentUpon>Default2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\Default2.aspx.designer.cs">
+      <DependentUpon>Default2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\Document.aspx.cs">
+      <DependentUpon>Document.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\Document.aspx.designer.cs">
+      <DependentUpon>Document.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\mntCalendar.aspx.cs">
+      <DependentUpon>mntCalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\mntCalendar.aspx.designer.cs">
+      <DependentUpon>mntCalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\mntCourt.aspx.cs">
+      <DependentUpon>mntCourt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\mntCourt.aspx.designer.cs">
+      <DependentUpon>mntCourt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\mntCreditor.aspx.cs">
+      <DependentUpon>mntCreditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\mntCreditor.aspx.designer.cs">
+      <DependentUpon>mntCreditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\mntDelegate.aspx.cs">
+      <DependentUpon>mntDelegate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\mntDelegate.aspx.designer.cs">
+      <DependentUpon>mntDelegate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\mntEntity.aspx.cs">
+      <DependentUpon>mntEntity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\mntEntity.aspx.designer.cs">
+      <DependentUpon>mntEntity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\mntExecuted.aspx.cs">
+      <DependentUpon>mntExecuted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\mntExecuted.aspx.designer.cs">
+      <DependentUpon>mntExecuted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\mntPermission.aspx.cs">
+      <DependentUpon>mntPermission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\mntPermission.aspx.designer.cs">
+      <DependentUpon>mntPermission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\mntProcessDetail.aspx.cs">
+      <DependentUpon>mntProcessDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\mntProcessDetail.aspx.designer.cs">
+      <DependentUpon>mntProcessDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\mntRepresentative.aspx.cs">
+      <DependentUpon>mntRepresentative.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\mntRepresentative.aspx.designer.cs">
+      <DependentUpon>mntRepresentative.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\mntSolicitor.aspx.cs">
+      <DependentUpon>mntSolicitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\mntSolicitor.aspx.designer.cs">
+      <DependentUpon>mntSolicitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\mntUserSettings.aspx.cs">
+      <DependentUpon>mntUserSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\mntUserSettings.aspx.designer.cs">
+      <DependentUpon>mntUserSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\mp.master.cs">
+      <DependentUpon>mp.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\mp.master.designer.cs">
+      <DependentUpon>mp.master</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\NewProcess.aspx.cs">
+      <DependentUpon>NewProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\NewProcess.aspx.designer.cs">
+      <DependentUpon>NewProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\process.aspx.cs">
+      <DependentUpon>process.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\process.aspx.designer.cs">
+      <DependentUpon>process.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\Process2.aspx.cs">
+      <DependentUpon>Process2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\Process2.aspx.designer.cs">
+      <DependentUpon>Process2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\processearch.aspx.cs">
+      <DependentUpon>processearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\processearch.aspx.designer.cs">
+      <DependentUpon>processearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\ProcessEPayment.aspx.cs">
+      <DependentUpon>ProcessEPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\ProcessEPayment.aspx.designer.cs">
+      <DependentUpon>ProcessEPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\ProcessG.aspx.cs">
+      <DependentUpon>ProcessG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\ProcessG.aspx.designer.cs">
+      <DependentUpon>ProcessG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\ProcessGHistory.aspx.cs">
+      <DependentUpon>ProcessGHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\ProcessGHistory.aspx.designer.cs">
+      <DependentUpon>ProcessGHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\ProcessGSearch.aspx.cs">
+      <DependentUpon>ProcessGSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\ProcessGSearch.aspx.designer.cs">
+      <DependentUpon>ProcessGSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\Representative.aspx.cs">
+      <DependentUpon>Representative.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\Representative.aspx.designer.cs">
+      <DependentUpon>Representative.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\Schedule.aspx.cs">
+      <DependentUpon>Schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\Schedule.aspx.designer.cs">
+      <DependentUpon>Schedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\services\CalendarService.svc.cs">
+      <DependentUpon>CalendarService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\services\CourtService.svc.cs">
+      <DependentUpon>CourtService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\services\EntityService.svc.cs">
+      <DependentUpon>EntityService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\services\ProcessEService.svc.cs">
+      <DependentUpon>ProcessEService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\services\ProcessGService.svc.cs">
+      <DependentUpon>ProcessGService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\services\UserService.svc.cs">
+      <DependentUpon>UserService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\WebUserControl.ascx.cs">
+      <DependentUpon>WebUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\WebUserControl.ascx.designer.cs">
+      <DependentUpon>WebUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\wucAppKey.ascx.cs">
+      <DependentUpon>wucAppKey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\wucAppKey.ascx.designer.cs">
+      <DependentUpon>wucAppKey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\wucGeneralInformation.ascx.cs">
+      <DependentUpon>wucGeneralInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\wucGeneralInformation.ascx.designer.cs">
+      <DependentUpon>wucGeneralInformation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\wucPEPayment.ascx.cs">
+      <DependentUpon>wucPEPayment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\wucPEPayment.ascx.designer.cs">
+      <DependentUpon>wucPEPayment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\wucProcessAlert.ascx.cs">
+      <DependentUpon>wucProcessAlert.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\wucProcessAlert.ascx.designer.cs">
+      <DependentUpon>wucProcessAlert.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\wucProcessDetails.ascx.cs">
+      <DependentUpon>wucProcessDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\wucProcessDetails.ascx.designer.cs">
+      <DependentUpon>wucProcessDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\wucProcessFiles.ascx.cs">
+      <DependentUpon>wucProcessFiles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\wucProcessFiles.ascx.designer.cs">
+      <DependentUpon>wucProcessFiles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\wucRepresentativeInformation.ascx.cs">
+      <DependentUpon>wucRepresentativeInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\wucRepresentativeInformation.ascx.designer.cs">
+      <DependentUpon>wucRepresentativeInformation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="webapp\secure\wucUserSettings.ascx.cs">
+      <DependentUpon>wucUserSettings.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webapp\secure\wucUserSettings.ascx.designer.cs">
+      <DependentUpon>wucUserSettings.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Handler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="includes\41-notepad\LICENSE" />
+    <Content Include="includes\41-notepad\README.md" />
+    <Content Include="includes\41-notepad\scss\style.scss" />
+    <None Include="L2S\BdDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>BdDataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="L2S\DAL\SolArc.xsc">
+      <DependentUpon>SolArc.xsd</DependentUpon>
+    </None>
+    <None Include="L2S\DAL\SolArc.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SolArc.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="L2S\DAL\SolArc.xss">
+      <DependentUpon>SolArc.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="webapp\secure\minutas.pdf" />
+    <Content Include="webapp\secure\mp.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="webapp\parameters\User\" />
+    <Folder Include="webapp\secure\files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SolarcEntities\SolarcEntities.csproj">
+      <Project>{057317AE-C10B-4FE6-93AC-585B097173D4}</Project>
+      <Name>SolarcEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SolarcLogic\SolarcLogic.csproj">
+      <Project>{B9847B30-02C1-4B39-9868-26B6284555C6}</Project>
+      <Name>SolarcLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="L2S\BdDataClasses.dbml.layout">
+      <DependentUpon>BdDataClasses.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>30431</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

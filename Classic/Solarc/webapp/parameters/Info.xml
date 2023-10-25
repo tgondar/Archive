@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<information>
+	<info id="0" value="" />
+  <!-- ### Nome da Empresa -->
+	<info id="1" value="CompanyName" />
+	<!-- ### Pesquisa Processos	-> N.Interno|Tribunal|Mandatario|N.Processo|Exequente|Executado|Localização|Utilizador|DataAlteração -->
+	<info id="2" value="1|1|1|1|1|1|1|1|1" />
+	<info id="3" value="Azul-Blue|Preto-Black|Cinzento-Gray" />
+  <!-- ### valor iva por defeito -->
+  <info id="4" value="21" />
+  <!-- ### valor retencao por defeito -->
+  <info id="5" value="21" />
+</information>

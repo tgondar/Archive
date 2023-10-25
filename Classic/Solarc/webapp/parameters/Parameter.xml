@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+	<!--Acesso Geral-->
+	<parameter id="0" value="6C245607-31FD-4A5C-BD8C-02307A39E177" />
+	<!--	#1 - Acesso a Advogados-->
+	<parameter id="1" value="93C71725-1769-40F6-82A0-9D97CAE0DFA8" />
+	<!--	#2filtro IP-->
+	<parameter id="2" value="0" />
+	<!--	#3pagamentos/Extracto-->
+	<parameter id="3" value="5F2AFD04-7917-45C2-AC77-687903DAB089" />
+	<!--	#4pack utilizadores (10)-->
+	<parameter id="4" value="100" />
+
+	<!--	###	+ 1	-->
+	<!--	#5Agenda-->
+	<parameter id="5" value="5CBF2AB4-B934-1020-90FB-80413B33E948" />
+	<!--	#6 - Minutas-->
+	<parameter id="6" value="47993F5A-CBEF-419F-A686-A4E2A28625A3" />
+	<!--	#7 - Anexo Ficheiros-->
+	<parameter id="7" value="36A59DB0-F4C9-431A-955F-5079CDE97406" />
+	<!--	#8 - VALIDATION KEY-->
+	<parameter id="8" value="5CBFB355832D4A659EB91D346C150243" />
+</parameters>

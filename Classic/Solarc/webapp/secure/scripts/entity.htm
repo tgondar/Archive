@@ -1,0 +1,140 @@
+﻿<script>
+    function ViewFormEntity() {
+        $("#newEntityForm").css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': '0px',
+            'left': '0px',
+            'padding': '0px',
+            'width': '100%',
+            'color': '#333',
+            'height': '100%',
+            'background-image': 'url("../../images/specpopupbg.png")',
+            'z-index': '100'
+        });
+        $("#newEntityFormContent").css({
+            'position': 'absolute',
+            'padding': '10px',
+            'width': '400px',
+            'left': '50%',
+            'margin-left': '-200px',
+            'top': '30px',
+            'font-weight': 'bold',
+            'z-index': '101',
+            'background': '#f1f1f1',
+            'border': '1px solid #666666'
+        });
+    }
+
+    function CloseFormEntity() {
+        $('#newEntityForm').css('display', 'none');
+    }
+
+    function AddEntity() {
+        $.ajax({ type: "GET", url: "services/EntityService.svc/AddEntity"
+            , data: { code: $('#txtCode').val()
+            , name: $('#txtName').val()
+            , identityCard: $('#txtIdentityCard').val()
+            , hPhone: $('#txtHPhone').val()
+            , mPhone: $('#txtMPhone').val()
+            , contactName: $('#txtContactName').val()
+            , fax: $('#txtFax').val()
+            , email: $('#txtEmail').val()
+            , taxNumber: $('#txtTaxNumber').val()
+            , address: $('#txtAddress').val()
+            , postalCode: $('#txtPostalCode').val()
+            , observation: $('#txtObservation').val()
+            }
+        }).done(function (msg) {
+            alert('Processo inserido com sucesso ? -> ' + msg.d);
+            $('#txtCode').html("");
+            $('#txtName').html("");
+            $('#txtIdentityCard').html("");
+            $('#txtHPhone').html("");
+            $('#txtMPhone').html("");
+            $('#txtContactName').html("");
+            $('#txtFax').html("");
+            $('#txtEmail').html("");
+            $('#txtTaxNumber').html("");
+            $('#txtAddress').html("");
+            $('#txtPostalCode').html("");
+            $('#txtObservation').html("");
+
+            if (msg.d == "ok") {
+                CloseFormEntity();
+            }
+        });
+    }
+</script>
+
+<div id="newEntityForm" style="display: none;">
+    <div id="newEntityFormContent">
+        <h2>Novo Cliente</h2>
+        <label for="txtCode">
+            Referência Interna
+        </label>
+        <br />
+        <input id="txtCode" />
+        <br />
+        <label for="txtName">Nome
+        </label>
+        <br />
+        <input id="txtName" />
+        <br />
+        <label for="txtIdentityCard">BI
+        </label>
+        <br />
+        <input id="txtIdentityCard" />
+        <br />
+        <label for="txtHPhone">Telefone
+        </label>
+        <br />
+        <input id="txtHPhone" />
+        <br />
+        <label for="txtMPhone">Telemovel
+        </label>
+        <br />
+        <input id="txtMPhone" />
+        <br />
+        <label for="txtContactName">Nome Contacto
+        </label>
+        <br />
+        <input id="txtContactName" />
+        <br />
+        <label for="txtFax">Fax
+        </label>
+        <br />
+        <input id="txtFax" />
+        <br />
+        <label for="Email">Email
+        </label>
+        <br />
+        <input id="txtEmail" />
+        <br />
+        <label for="txtTaxNumber">NIF
+        </label>
+        <br />
+        <input id="txtTaxNumber" />
+        <br />
+        <label for="txtEAddress">Morada
+        </label>
+        <br />
+        <input id="txtEAddress" />
+        <br />
+        <label for="txtPostalCode">Código Postal
+        </label>
+        <br />
+        <input id="txtPostalCode" />
+        <br />
+        <label for="txtObservation">Observação
+        </label>
+        <br />
+        <input id="txtObservation" />
+        <br />
+        <br />
+        <br />
+        <br />
+        <input type="button" value="Adicionar" onclick="AddEntity()" />
+        <input type="button" value="cancelar" onclick="CloseFormEntity()" />
+    </div>
+</div>

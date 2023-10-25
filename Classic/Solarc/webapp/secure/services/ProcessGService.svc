@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Solarc.webapp.secure.services.ProcessGService" CodeBehind="ProcessGService.svc.cs" %>

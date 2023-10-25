@@ -1,0 +1,323 @@
+﻿USE [testes]
+GO
+
+/****** Object:  Table [dbo].[calendar_tb_Alerts]    Script Date: 07/15/2010 00:26:23 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[calendar_tb_Alerts](
+	[alertId] [int] IDENTITY(1,1) NOT NULL,
+	[userID] [uniqueidentifier] NOT NULL,
+	[dateToAlert] [datetime] NOT NULL,
+	[message] [nvarchar](max) NOT NULL,
+	[eventID] [int] NOT NULL,
+ CONSTRAINT [PK_calendar_tb_Alerts] PRIMARY KEY CLUSTERED 
+(
+	[alertId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+USE [testes]
+GO
+
+/****** Object:  Table [dbo].[calendar_tb_Event]    Script Date: 07/15/2010 00:26:23 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[calendar_tb_Event](
+	[EventId] [int] IDENTITY(1,1) NOT NULL,
+	[Date] [datetime] NULL,
+	[Subject] [nvarchar](25) NULL,
+	[Description] [nvarchar](100) NULL,
+	[CreateDate] [datetime] NULL,
+	[CreateUserId] [uniqueidentifier] NULL,
+	[AlterDate] [datetime] NULL,
+	[AlterUserId] [uniqueidentifier] NULL,
+	[isPublic] [smallint] NULL,
+ CONSTRAINT [PK_E_EventId] PRIMARY KEY CLUSTERED 
+(
+	[EventId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+USE [testes]
+GO
+
+/****** Object:  Table [dbo].[calendar_tb_EventRead]    Script Date: 07/15/2010 00:26:23 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[calendar_tb_EventRead](
+	[EventReadID] [int] IDENTITY(1,1) NOT NULL,
+	[EventID] [int] NULL,
+	[UserID] [uniqueidentifier] NULL,
+	[ReadedAt] [datetime] NULL,
+ CONSTRAINT [PK_ERead_EventReadId] PRIMARY KEY CLUSTERED 
+(
+	[EventReadID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[calendar_tb_Alerts]  WITH CHECK ADD  CONSTRAINT [fk_alters_events] FOREIGN KEY([eventID])
+REFERENCES [dbo].[calendar_tb_Event] ([EventId])
+GO
+
+ALTER TABLE [dbo].[calendar_tb_Alerts] CHECK CONSTRAINT [fk_alters_events]
+GO
+
+ALTER TABLE [dbo].[calendar_tb_Event]  WITH CHECK ADD  CONSTRAINT [FK_E_AlterUserId] FOREIGN KEY([AlterUserId])
+REFERENCES [dbo].[aspnet_Users] ([UserId])
+GO
+
+ALTER TABLE [dbo].[calendar_tb_Event] CHECK CONSTRAINT [FK_E_AlterUserId]
+GO
+
+ALTER TABLE [dbo].[calendar_tb_Event]  WITH CHECK ADD  CONSTRAINT [FK_E_CreateUserId] FOREIGN KEY([CreateUserId])
+REFERENCES [dbo].[aspnet_Users] ([UserId])
+GO
+
+ALTER TABLE [dbo].[calendar_tb_Event] CHECK CONSTRAINT [FK_E_CreateUserId]
+GO
+
+ALTER TABLE [dbo].[calendar_tb_EventRead]  WITH CHECK ADD  CONSTRAINT [FK_ERead_EventId] FOREIGN KEY([EventID])
+REFERENCES [dbo].[calendar_tb_Event] ([EventId])
+GO
+
+ALTER TABLE [dbo].[calendar_tb_EventRead] CHECK CONSTRAINT [FK_ERead_EventId]
+GO
+
+ALTER TABLE [dbo].[calendar_tb_EventRead]  WITH CHECK ADD  CONSTRAINT [FK_ERead_UserId] FOREIGN KEY([UserID])
+REFERENCES [dbo].[aspnet_Users] ([UserId])
+GO
+
+ALTER TABLE [dbo].[calendar_tb_EventRead] CHECK CONSTRAINT [FK_ERead_UserId]
+GO
+
+
+/****** Object:  StoredProcedure [dbo].[uspCalendarHowManyDayEvents]    Script Date: 07/15/2010 00:27:16 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE procedure [dbo].[uspCalendarHowManyDayEvents]
+	@date datetime,
+	@createUserID uniqueidentifier,
+	@days int,
+	@numberDay int
+	as begin
+
+select  count(EventID) from Calendar_tb_Event ctb
+ where DATEDIFF(dd, @date, Date ) <=@numberDay AND Date >= @date and
+  (CreateUserID=@createUserID OR isPublic=1)
+end 
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[uspCalendarInsert]    Script Date: 07/15/2010 00:27:16 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [dbo].[uspCalendarInsert]
+@Date datetime,
+@Subject nvarchar(50),
+@Description nvarchar(50),
+@Alert int,
+@isPublic smallint,
+@UserID uniqueidentifier
+
+as
+
+begin
+	insert into calendar_tb_Event 
+	values(@Date,@Subject,@Description,@Alert,GETDATE(),@UserID,GETDATE(),@UserID,@isPublic)
+end
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[uspCalendarIsRead]    Script Date: 07/15/2010 00:27:16 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE procedure [dbo].[uspCalendarIsRead]
+	@EventId int,
+	@UserID uniqueidentifier
+as begin
+
+if (select COUNT(*) from calendar_tb_EventRead ctbr 
+	join calendar_tb_Event ctb on ctb.EventId = ctbr.EventID
+where  ctbr.EventId = @EventId and ctbr.UserID = @UserID and ctb.AlterDate > ctbr.ReadedAt)>0	
+select '0'
+else
+select '1'
+end
+
+--or (select COUNT(*) from calendar_tb_Event ctb 
+	--join calendar_tb_EventRead ctbr on ctb.EventId = ctbr.EventID
+	--where @UserID = ctbr.UserID and @EventId=ctbr.EventID and ctb.AlterDate > ctbr.ReadedAt)
+	
+	select * from calendar_tb_Event
+	select * from calendar_tb_EventRead
+	select * from aspnet_Users
+GO
+
+/****** Object:  StoredProcedure [dbo].[uspCalendarMarkAsRead]    Script Date: 07/15/2010 00:27:16 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [dbo].[uspCalendarMarkAsRead]
+	@EventID int,
+	@UserID uniqueidentifier
+as
+begin
+	if (select count(EventReadID) from calendar_tb_EventRead where EventID = @EventID AND UserID = @UserID)=0
+	insert into calendar_tb_EventRead values(@EventID, @UserID, GETDATE())
+	else
+	update calendar_tb_EventRead set ReadedAt=GETDATE() where EventID=@EventID AND UserID=@UserID
+end
+GO
+
+/****** Object:  StoredProcedure [dbo].[uspCalendarReturnDateEvents]    Script Date: 07/15/2010 00:27:16 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [dbo].[uspCalendarReturnDateEvents]
+@date nvarchar(10),
+@createUserID uniqueidentifier
+as 
+begin
+	select CONVERT(char(5), Date, 108) as Hora, Subject, EventID, CAST( ctb.Alert as bit) as Alert
+	from Calendar_tb_Event ctb
+	where CONVERT(varchar(10),Date, 105)=@date and (CreateUserID=@createUserID OR isPublic=1)  
+	order by Date
+end
+GO
+
+/****** Object:  StoredProcedure [dbo].[uspCalendarReturnDateEventsPaging]    Script Date: 07/15/2010 00:27:16 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [dbo].[uspCalendarReturnDateEventsPaging]
+	@date nvarchar(10),
+	@createUserID uniqueidentifier,
+	@first int,
+	@last int
+	as begin 
+ SELECT * FROM (SELECT ROW_NUMBER() OVER
+(ORDER BY Date asc) AS 
+rownum, (CONVERT(char(10), date, 110) + ' ' + CONVERT(char(5),date, 108)) as Data, Subject, EventID, CAST( ctb.Alert as bit) as Alert
+	from Calendar_tb_Event ctb
+	where CONVERT(varchar(10),Date, 105)=@date and (CreateUserID=@createUserID OR isPublic=1)) AS tmp
+WHERE rownum >=@first AND rownum < @last		
+	end
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[uspCalendarReturnEventsDays]    Script Date: 07/15/2010 00:27:16 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure [dbo].[uspCalendarReturnEventsDays]
+@date datetime,
+@numberDay int,
+@createUserID uniqueidentifier
+as begin
+select CONVERT(char(5), Date, 108) as Hora, Description, EventID from Calendar_tb_Event where DATEDIFF(dd, @date, Date ) <=@numberDay AND Date >= @date and (CreateUserID=@createUserID OR isPublic=1)
+end
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[uspCalendarReturnEventsDaysPaging]    Script Date: 07/15/2010 00:27:16 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [dbo].[uspCalendarReturnEventsDaysPaging]
+@date datetime,
+@numberDay int,
+@createUserID uniqueidentifier,
+@first int,
+@last int
+as begin
+
+SELECT * FROM (SELECT ROW_NUMBER() OVER
+(ORDER BY Date asc) AS 
+rownum, (CONVERT(char(10), date, 110) + ' ' + CONVERT(char(5),date, 108)) as Data,Subject, EventID, CAST( ctb.Alert as bit) as Alert
+ from Calendar_tb_Event ctb
+ where DATEDIFF(dd, @date, Date ) <=@numberDay AND Date >= @date and
+  (CreateUserID=@createUserID OR isPublic=1))
+ AS tmp
+WHERE rownum >=@first AND rownum < @last		
+	end
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[uspCalendarUpdate]    Script Date: 07/15/2010 00:27:17 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [dbo].[uspCalendarUpdate]
+@EventId int,
+@Date datetime,
+@Subject nvarchar(50),
+@Description nvarchar(50),
+@Alert int,
+@isPublic int,
+@UserID uniqueidentifier
+as
+begin
+if (select COUNT(EventID) from calendar_tb_Event where EventId=@EventId AND Date=@Date AND Subject=@Subject
+	AND Description=@Description and Alert=@Alert and isPublic=@isPublic)=0
+		update calendar_tb_Event 
+		set Date=@Date,Subject=@Subject,Description=@Description,Alert=@Alert,AlterDate=GETDATE(),AlterUserId=@UserID,isPublic=@isPublic
+		where EventId=@EventId
+end
+
+
+GO
+
+

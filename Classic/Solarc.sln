@@ -1,19 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.7.34202.233
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Classic", "Classic", "{F74F5563-CC9B-4BB0-944A-C3B7592DBEC4}"
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solarc", "Solarc\Solarc.csproj", "{5339C3FC-916E-488A-94FD-F9DCD23D5D3A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "New", "New", "{D2172473-5E25-4513-B836-8F13BDE6A1C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarcEntities", "SolarcEntities\SolarcEntities.csproj", "{057317AE-C10B-4FE6-93AC-585B097173D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solarc", "Classic\Solarc\Solarc.csproj", "{5339C3FC-916E-488A-94FD-F9DCD23D5D3A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarcEntities", "Classic\SolarcEntities\SolarcEntities.csproj", "{057317AE-C10B-4FE6-93AC-585B097173D4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarcLogic", "Classic\SolarcLogic\SolarcLogic.csproj", "{B9847B30-02C1-4B39-9868-26B6284555C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarcLogic", "SolarcLogic\SolarcLogic.csproj", "{B9847B30-02C1-4B39-9868-26B6284555C6}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://painatal.no-ip.org:8080/tfs/foxtrot
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Solarc\\Solarc.csproj
+		SccProjectName1 = Solarc
+		SccLocalPath1 = Solarc
+		SccProjectUniqueName2 = SolarcEntities\\SolarcEntities.csproj
+		SccProjectName2 = SolarcEntities
+		SccLocalPath2 = SolarcEntities
+		SccProjectUniqueName3 = SolarcLogic\\SolarcLogic.csproj
+		SccProjectName3 = SolarcLogic
+		SccLocalPath3 = SolarcLogic
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -34,13 +43,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{5339C3FC-916E-488A-94FD-F9DCD23D5D3A} = {F74F5563-CC9B-4BB0-944A-C3B7592DBEC4}
-		{057317AE-C10B-4FE6-93AC-585B097173D4} = {F74F5563-CC9B-4BB0-944A-C3B7592DBEC4}
-		{B9847B30-02C1-4B39-9868-26B6284555C6} = {F74F5563-CC9B-4BB0-944A-C3B7592DBEC4}
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E70B56D9-F312-4383-B6A6-2C5D4DDA95DD}
 	EndGlobalSection
 EndGlobal

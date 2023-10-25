@@ -1,0 +1,118 @@
+﻿body {background-image:url(../images/webapp/backBlue.png); font-family:Tahoma; font-size:12px; height:100%; width:100%; margin: 0px; padding: 0px;}
+
+.back{background-image:url(../images/website/backTop.png); background-repeat:no-repeat; background-position:center; height:350px;}
+.textInfo{color:#666666; font-size:12px; padding:5px 0 5px 5px; background-color:#ffffff;}
+.textLinkLastProcess{color:#666666; text-decoration:underline;font-size:12px; font-weight:bold;}
+
+.procNum{font-size:x-large; font-weight:bold; text-align:center; color:#333333;}
+.procArea{font-size:10px; font-weight:bold; background-color:#99CC99;}
+.procSpecField{font-size:12px; font-weight:bold;}
+.procField{font-size:12px;}
+
+/*  ### LOGIN   */
+.textLgTextBox{font-family:Verdana;font-size:10px; border:solid 1px #666666; margin:2px;}
+.textLgLabel{font-family:Verdana;font-size:10px; color:#ffffff;}
+.textLgBt{color:#000; font-size:12px; font-weight:bold; margin: 3px;}
+
+
+/*  ### AUTOCOMPLETE    */
+.autocomplete_completionListElement {visibility:hidden;margin:0px; font-size:x-small;background-color:inherit;color:windowtext;cursor:'default';overflow:auto;height:100px;text-align:left;list-style-type:none;}
+.autocomplete_highlightedListItem{background-color:#ffff99;color:black;padding: 1px;  font-size:x-small;}
+.autocomplete_listItem {background-color:window;color:windowtext;padding:1px; font-size:x-small;}
+
+/* ######################################################################################################### */
+/* CALENDARIO v1 */
+.DayStyle1 {background: url('../images/tableColor3.png') repeat-x; padding: 0 5px; font-weight:bold; color:#ffffff; height:29px; text-align:center;}
+.DayStyle2 {background: url('../images/tableColor1.png') repeat-x; padding: 0 5px; font-weight:bold; color:#ffffff; height:29px; text-align:center;}
+/* CALENDARIO v2 */
+.weekDays {float:left; background: url('../images/weekDaysBackground.jpg') repeat-x; padding-top:8px; height:22px; width:140px; margin: 1px 1px 0 1px; font-size:11px; font-weight:bold; text-align:center;}
+/* actualMonth */
+.actualMonth {line-height:10px;width:140px; height:135px; border-bottom:5px solid #0099cc; margin:1px; background: url('../images/event1.jpg') repeat-x; float:left;}
+.actualMonthDayNumber {clear:both; font-family:Verdana; font-size:16px; font-weight:bold; color:#0099cc; width:120px; height:115px; padding: 10px;}
+/* actualMonthSpecial */
+.actualMonthSpecial {line-height:10px;width:140px; height:135px; border-bottom:5px solid #f09800; margin:1px; background: url('../images/event1.jpg') repeat-x; float:left;}
+.actualMonthSpecial:hover {background: #cccccc url('../images/event5.jpg') repeat-x;}
+.actualMonthSpecialDayNumber {width: 120px; height: 115px; padding: 10px; clear:both; font-family:Verdana; font-size:16px; font-weight:bold; color:#f09800;}
+
+/* previousNextMonth */
+.previousNextMonth {line-height:10px; width:140px; height:135px; border-bottom:5px solid #aaaaaa; margin:1px; background: url('../images/event2.jpg') repeat-x; float:left;}
+.previousNextMonthDayNumber {clear:both; font-family:Verdana; font-size:16px; font-weight:bold; color:#999999; width:120px; height:115px; padding: 10px;}
+
+/* birthday */
+.birthday {width:140px; height: 135px; border-bottom:5px solid #acac00; margin:1px; background: url('../images/event3.jpg') repeat-x; float:left;}
+.birthday:hover {background: url('../images/event6.jpg') repeat-x;}
+.birthdayDayNumber {width: 120px; height: 115px; padding: 10px; clear:both; font-family:Verdana; font-size:16px; font-weight:bold; color:#000000;}
+/* weekend */
+.weekend {line-height:10px;width: 140px; height: 135px; border-bottom:5px solid #0099cc; margin:1px; background: url('../images/event4.jpg') repeat-x; float:left;}
+.weekendDayNumber {clear:both; font-family:Verdana; font-size:16px; font-weight:bold; color:#0099cc; width:120px; height:115px; padding: 10px;}
+/* event */
+.eventContent {line-height:10px;font-size:10px; color:#000000; width:120px; font-weight:normal; clear:both; text-transform:uppercase; }
+.eventSpecialContent {line-height:10px;font-size:10px; color:#000000; width:120px; font-weight:bold; clear:both; text-transform:uppercase;}  
+/* currentDay */
+.currentDay {line-height:10px; width:140px; height: 135px; border-bottom:5px solid #0099cc; margin:1px; background: #fff2b5 url('../images/actualDayPattern.png') repeat; float:left;}
+.currentDaySpecial {line-height:10px;width:140px; height: 135px; border-bottom:5px solid #f09800; margin:1px; background: #fff2b5 url('../images/actualDayPattern.png') repeat; float:left;}
+/* ######################################################################################################### */
+
+
+
+.textTextBox{font-family:Verdana;font-size:12px; border:solid 1px #000000; height:18px;}
+.textLabel{font-family:Verdana;font-size:12px; color:#333333;}
+.textDropDown{font-family:Verdana;font-size:10px; color:#333333;}
+.textLabelB{font-family:Verdana;font-size:10px; color:#000000;}
+.textLink{color:#333333; text-decoration:underline;font-size:12px; font-weight:bold;}
+.textLinkB{color:#000000; text-decoration:underline;font-size:12px; font-weight:bold;}
+.textTitle{font-family:Verdana;font-size:16px; font-weight:bold; color:#ffffff;}
+.textProcessColumns{font-family:Verdana;font-size:12px; color:#333333; text-align:left; white-space:nowrap;}
+.textProcessFields{font-family:Verdana;font-size:12px; color:#333333; text-align:left;}
+.textError{font-family:Verdana;font-size:10px; color:red;}
+
+.divContentTitle{padding:5px 0 0 10px;background-image:url('../images/webapp/titleBackBlue.png'); background-repeat:repeat-x; height:25px; margin:20px 0 0 0; text-align:left;border-bottom:solid 1px #333333;}
+.divContent{padding:2px 0 20px 0; color:#ffffff; font-size:14px; font-weight:bold; margin:0 0 10px 0;}
+.divContentMix{background-image:url('../images/webapp/titleBackBlue.png');background-repeat:repeat-x; height:30px; color:#ffffff; background-color:#333333; border-bottom:solid 1px #333333; font-size:14px; font-weight:bold; text-align:left; padding:2px 2px 2px 5px; clear:both;}
+.divContentFields{text-align:left; padding:10px;}
+
+.divErro{color:#990000; font-size:14px; font-weight:bold; text-align:left; margin:10px 0 0 0;}
+
+.panelEdit{background-color:#cccccc; padding:2px;}
+.panelEditLabel{font-family:Verdana;font-size:10px; color:#000000;}
+.panelEditTextBox{font-family:Verdana;font-size:10px; border:solid 1px #cc3300;}
+.panelEditLink{color:#000000; text-decoration:underline;font-size:12px; font-weight:bold;}
+
+.update{width:200px;background:#ccc;position:fixed;left:43%;background-color:#990000; color:#ffffff; font-weight:bold; font-size:12px; padding:5px 10px; text-align:center;}
+.BackProcess{padding:5px; background-color:#aecee4;}
+
+
+/*  ### INFORMACAO VERSOES */
+ul#menu, ul#menu ul {list-style-type:none;margin: 0;padding: 0;width: 500px;}
+ul#menu a {display: block;text-decoration: none;}
+ul#menu li {margin-top: 1px;}
+ul#menu li a {background: #143d55;color: #fff;	padding: 0.5em;font-size:small;text-align:left;}
+ul#menu li a:hover {background: #2c7dac;}
+ul#menu li ul li a {background: #82c7ea;color: #000;padding-left: 20px;}
+ul#menu li ul li a:hover {background: #2c7dac;border-left: 5px #000 solid;padding-left: 15px;}
+
+.code { border: 1px solid #82c7ea; list-style-type: decimal-leading-zero; padding: 5px; margin: 0;}
+.code code { display: block; padding: 3px; margin-bottom: 0;}
+.code li { background: #ddd; border: 1px solid #ccc; margin: 0 0 2px 2.2em;}
+.indent1 { padding-left: 1em; }
+.indent2 { padding-left: 2em; }
+
+.BackInformation{padding:5px; margin:5px; background-color:#aecee4;}
+.PaymentButton{background-color: #88bee3; padding: 4px; margin:0 10px 0 0;}
+
+.ui-autocomplete { max-height: 200px; overflow-y: auto; overflow-x: hidden; padding-right: 20px; }
+* html .ui-autocomplete { height: 100px; }
+
+/* TABELA 2 (AZUL) */
+table.standard1 {border: solid 1px #1638ff;}
+table.standard1 th { background-image:url('../images/webapp/titleBackBlue.png'); background-repeat:repeat-x; padding: 0 5px; height: 29px; text-align:left; color:#ffffff;}
+table.standard1 td {margin: 6px; padding: 4px; font-size:11px;}
+
+.RowStyle2 {background-color:#ddf0ff; color:#333333; border-top:1px solid #9c9b9b;}
+
+.AlternatingRowStyle2 {background-color:#ffffff; color:#284775; border-top:1px solid #9c9b9b;}
+
+.btCalendar { width:30px; height:16px; border:none; cursor:pointer;}
+.btCalendarAdd {margin: 2px 10px 2px 0; width:16px; height:16px; border:none; cursor:pointer; background: url('../images/icons/add.png') no-repeat;}
+.btCalendarDel {margin: 2px 5px 2px 0; width:16px; height:16px; border:none; cursor:pointer; background: url('../images/icons/cancel.png') no-repeat;}
+.btCalendarCheck {margin: 2px 5px 2px 0; width:16px; height:16px; border:none; cursor:pointer; background: url('../images/icons/confirm.png') no-repeat;}

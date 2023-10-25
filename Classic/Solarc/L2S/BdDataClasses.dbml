@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="tb_SolarcLixo" Class="BdDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=r0x;Initial Catalog=tb_SolarcLixo;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="conn" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tb_Process" Member="tb_Processes">
+    <Type Name="tb_Process">
+      <Column Name="ProcessId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Initials" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProcessNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ExesAE" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Classification" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Observation" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="CourtId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SectionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RepresentativeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Enforcement" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreateUserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AlterDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AlterUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AlterDate1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AlterUserId1" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AlterDate2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AlterUserId2" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Section" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Localization" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExecutionTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LocalizationDetail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Alt" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ValueToRecover" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="LocalizationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tb_Process_tb_ProcessPayment" Member="tb_ProcessPayments" ThisKey="ProcessId" OtherKey="ProcessId" Type="tb_ProcessPayment" />
+      <Association Name="tb_Process_tb_ProcessDetail" Member="tb_ProcessDetail" ThisKey="ProcessId" OtherKey="ProcessId" Type="tb_ProcessDetail" Cardinality="One" />
+      <Association Name="tb_Process_tb_ProcessExecuted" Member="tb_ProcessExecuteds" ThisKey="ProcessId" OtherKey="ProcessId" Type="tb_ProcessExecuted" />
+      <Association Name="tb_Process_tb_ProcessCreditor" Member="tb_ProcessCreditors" ThisKey="ProcessId" OtherKey="ProcessId" Type="tb_ProcessCreditor" />
+      <Association Name="tb_Court_tb_Process" Member="tb_Court" ThisKey="CourtId" OtherKey="CourtId" Type="tb_Court" IsForeignKey="true" />
+      <Association Name="tb_Representative_tb_Process" Member="tb_Representative" ThisKey="RepresentativeId" OtherKey="RepresentativeId" Type="tb_Representative" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ProcessPayment" Member="tb_ProcessPayments">
+    <Type Name="tb_ProcessPayment">
+      <Column Name="PaymentYear" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PaymentId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProcessId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExecutedId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OutCome" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="InCome" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Vat" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="RetentionValue" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RepresentativeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceNumber" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Observation" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="PaymentDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreateUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AlterDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AlterUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_Process_tb_ProcessPayment" Member="tb_Process" ThisKey="ProcessId" OtherKey="ProcessId" Type="tb_Process" IsForeignKey="true" />
+      <Association Name="tb_Executed_tb_ProcessPayment" Member="tb_Executed" ThisKey="ExecutedId" OtherKey="ExecutedId" Type="tb_Executed" IsForeignKey="true" />
+      <Association Name="tb_Representative_tb_ProcessPayment" Member="tb_Representative" ThisKey="RepresentativeId" OtherKey="RepresentativeId" Type="tb_Representative" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ProcessG" Member="tb_ProcessGs">
+    <Type Name="tb_ProcessG">
+      <Column Name="ProcessId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Initials" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Problem" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreateUserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AlterDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AlterUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AlterDate1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AlterUserId1" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AlterDate2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AlterUserId2" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Localization" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LocalizationDetail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Observation" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Association Name="tb_ProcessG_tb_ProcessGPayment" Member="tb_ProcessGPayments" ThisKey="ProcessId" OtherKey="ProcessId" Type="tb_ProcessGPayment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ProcessGPayment" Member="tb_ProcessGPayments">
+    <Type Name="tb_ProcessGPayment">
+      <Column Name="PaymentYear" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PaymentId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProcessId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OutCome" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="InCome" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Vat" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="RetentionValue" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceNumber" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Observation" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="PaymentDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreateUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AlterDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AlterUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_ProcessG_tb_ProcessGPayment" Member="tb_ProcessG" ThisKey="ProcessId" OtherKey="ProcessId" Type="tb_ProcessG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Users" Member="aspnet_Users">
+    <Type Name="aspnet_User">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredUserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileAlias" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsAnonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Roles" Member="aspnet_Roles">
+    <Type Name="aspnet_Role">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredRoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_UsersInRoles" Member="aspnet_UsersInRoles">
+    <Type Name="aspnet_UsersInRole">
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Creditor" Member="tb_Creditors">
+    <Type Name="tb_Creditor">
+      <Column Name="CreditorId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdentityCard" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NifNipl" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Nifs" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BornDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateUserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AlterDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AlterUserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Court" Member="tb_Courts">
+    <Type Name="tb_Court">
+      <Column Name="CourtId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreateUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AlterDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AlterUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="JudicialDistrict" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="tb_Court_tb_Process" Member="tb_Processes" ThisKey="CourtId" OtherKey="CourtId" Type="tb_Process" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Executed" Member="tb_Executeds">
+    <Type Name="tb_Executed">
+      <Column Name="ExecutedId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdentityCard" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NifNipl" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Nifs" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BornDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreateUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AlterDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AlterUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="MPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tb_Executed_tb_ProcessPayment" Member="tb_ProcessPayments" ThisKey="ExecutedId" OtherKey="ExecutedId" Type="tb_ProcessPayment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Representative" Member="tb_Representatives">
+    <Type Name="tb_Representative">
+      <Column Name="RepresentativeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Userid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreateUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AlterDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AlterUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Nif" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CarbonCopy" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LawyerNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tb_Representative_tb_Process" Member="tb_Processes" ThisKey="RepresentativeId" OtherKey="RepresentativeId" Type="tb_Process" />
+      <Association Name="tb_Representative_tb_ProcessPayment" Member="tb_ProcessPayments" ThisKey="RepresentativeId" OtherKey="RepresentativeId" Type="tb_ProcessPayment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ProcessDetail" Member="tb_ProcessDetails">
+    <Type Name="tb_ProcessDetail">
+      <Column Name="ProcessId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PaymentAgreementId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProcessExtinctionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExtinctionCodeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArrangementsInPlaceId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InAttachmentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProcessStateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DBInfoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UncollectabilityCertificateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Provision" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="ProvisionReceptionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PendingInvoicePayment" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="DiligenceLocation" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="JudicialPhaseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PendingInvoicePaymentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreditorReference" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AcceptDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DuplicatesReceipt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="JudgeObservation" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="Alert" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tb_Process_tb_ProcessDetail" Member="tb_Process" ThisKey="ProcessId" OtherKey="ProcessId" Type="tb_Process" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ProcessExecuted" Member="tb_ProcessExecuteds">
+    <Type Name="tb_ProcessExecuted">
+      <Column Name="ExecutedId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProcessId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tb_Process_tb_ProcessExecuted" Member="tb_Process" ThisKey="ProcessId" OtherKey="ProcessId" Type="tb_Process" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ProcessCreditor" Member="tb_ProcessCreditors">
+    <Type Name="tb_ProcessCreditor">
+      <Column Name="CreditorId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProcessId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tb_Process_tb_ProcessCreditor" Member="tb_Process" ThisKey="ProcessId" OtherKey="ProcessId" Type="tb_Process" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Entity" Member="tb_Entities">
+    <Type Name="tb_Entity">
+      <Column Name="EntityId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TaxNumber" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="HPhone" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="MPhone" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Observation" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdentityCard" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IdentityCardExpireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BirthPlace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CleanName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateUserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AlterDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AlterUserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

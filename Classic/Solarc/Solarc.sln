@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Solarc3", ".", "{4A6DE64B-994A-443A-AB58-A1726B3DCA81}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""
+		SccAuxPath = ""
+		SccLocalPath = ""
+		SccProvider = ""
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{B9847B30-02C1-4B39-9868-26B6284555C6}|SolarcLogic.dll;{057317AE-C10B-4FE6-93AC-585B097173D4}|SolarcEntities.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/desenvolvimento"
+		Debug.AspNetCompiler.PhysicalPath = "..\Solarc3\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\desenvolvimento\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/desenvolvimento"
+		Release.AspNetCompiler.PhysicalPath = "..\Solarc3\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\desenvolvimento\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "5111"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarcLogic", "..\SolarcLogic\SolarcLogic.csproj", "{B9847B30-02C1-4B39-9868-26B6284555C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarcEntities", "..\SolarcEntities\SolarcEntities.csproj", "{057317AE-C10B-4FE6-93AC-585B097173D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A6DE64B-994A-443A-AB58-A1726B3DCA81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A6DE64B-994A-443A-AB58-A1726B3DCA81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A6DE64B-994A-443A-AB58-A1726B3DCA81}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A6DE64B-994A-443A-AB58-A1726B3DCA81}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B9847B30-02C1-4B39-9868-26B6284555C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9847B30-02C1-4B39-9868-26B6284555C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9847B30-02C1-4B39-9868-26B6284555C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9847B30-02C1-4B39-9868-26B6284555C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{057317AE-C10B-4FE6-93AC-585B097173D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{057317AE-C10B-4FE6-93AC-585B097173D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{057317AE-C10B-4FE6-93AC-585B097173D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{057317AE-C10B-4FE6-93AC-585B097173D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal
